@@ -1,0 +1,1341 @@
+databaseChangeLog:
+- changeSet:
+    id: 1496329844613-1
+    author: ferrarimarco
+    changes:
+    - createSequence:
+        cacheSize: 20
+        cycle: false
+        incrementBy: 1
+        maxValue: 9223372036854775807
+        minValue: 0
+        ordered: false
+        sequenceName: BATCH_JOB_EXECUTION_SEQ
+        startValue: 180
+- changeSet:
+    id: 1496329844613-2
+    author: ferrarimarco
+    changes:
+    - createSequence:
+        cacheSize: 20
+        cycle: false
+        incrementBy: 1
+        maxValue: 9223372036854775807
+        minValue: 0
+        ordered: false
+        sequenceName: BATCH_JOB_SEQ
+        startValue: 80
+- changeSet:
+    id: 1496329844613-3
+    author: ferrarimarco
+    changes:
+    - createSequence:
+        cacheSize: 20
+        cycle: false
+        incrementBy: 1
+        maxValue: 9223372036854775807
+        minValue: 0
+        ordered: false
+        sequenceName: BATCH_STEP_EXECUTION_SEQ
+        startValue: 180
+- changeSet:
+    id: 1496329844613-4
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: IMPORT_DATE
+            type: TIMESTAMP(6)
+        - column:
+            name: COMPRESSION_ALGORITHM
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: DATA
+            type: BLOB
+        - column:
+            name: DESCRIPTION
+            type: CLOB
+        - column:
+            name: FORMAT
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: NAME
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_ID
+            type: VARCHAR2(255 CHAR)
+        tableName: ATTACHMENT
+- changeSet:
+    id: 1496329844613-5
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: JOB_EXECUTION_ID
+            type: NUMBER(19, 0)
+        - column:
+            name: VERSION
+            type: NUMBER(19, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: JOB_INSTANCE_ID
+            type: NUMBER(19, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: CREATE_TIME
+            type: TIMESTAMP(6)
+        - column:
+            name: START_TIME
+            type: TIMESTAMP(6)
+        - column:
+            name: END_TIME
+            type: TIMESTAMP(6)
+        - column:
+            name: STATUS
+            type: VARCHAR2(10 BYTE)
+        - column:
+            name: EXIT_CODE
+            type: VARCHAR2(2500 BYTE)
+        - column:
+            name: EXIT_MESSAGE
+            type: VARCHAR2(2500 BYTE)
+        - column:
+            name: LAST_UPDATED
+            type: TIMESTAMP(6)
+        - column:
+            name: JOB_CONFIGURATION_LOCATION
+            type: VARCHAR2(2500 BYTE)
+        tableName: BATCH_JOB_EXECUTION
+- changeSet:
+    id: 1496329844613-6
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: JOB_EXECUTION_ID
+            type: NUMBER(19, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: SHORT_CONTEXT
+            type: VARCHAR2(2500 BYTE)
+        - column:
+            name: SERIALIZED_CONTEXT
+            type: CLOB
+        tableName: BATCH_JOB_EXECUTION_CONTEXT
+- changeSet:
+    id: 1496329844613-7
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: JOB_EXECUTION_ID
+            type: NUMBER(19, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: TYPE_CD
+            type: VARCHAR2(6 BYTE)
+        - column:
+            constraints:
+              nullable: false
+            name: KEY_NAME
+            type: VARCHAR2(100 BYTE)
+        - column:
+            name: STRING_VAL
+            type: VARCHAR2(250 BYTE)
+        - column:
+            name: DATE_VAL
+            type: TIMESTAMP(6)
+        - column:
+            name: LONG_VAL
+            type: NUMBER(19, 0)
+        - column:
+            name: DOUBLE_VAL
+            type: NUMBER
+        - column:
+            constraints:
+              nullable: false
+            name: IDENTIFYING
+            type: CHAR(1 BYTE)
+        tableName: BATCH_JOB_EXECUTION_PARAMS
+- changeSet:
+    id: 1496329844613-8
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: JOB_INSTANCE_ID
+            type: NUMBER(19, 0)
+        - column:
+            name: VERSION
+            type: NUMBER(19, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: JOB_NAME
+            type: VARCHAR2(100 BYTE)
+        - column:
+            constraints:
+              nullable: false
+            name: JOB_KEY
+            type: VARCHAR2(32 BYTE)
+        tableName: BATCH_JOB_INSTANCE
+- changeSet:
+    id: 1496329844613-9
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: STEP_EXECUTION_ID
+            type: NUMBER(19, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: VERSION
+            type: NUMBER(19, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: STEP_NAME
+            type: VARCHAR2(100 BYTE)
+        - column:
+            constraints:
+              nullable: false
+            name: JOB_EXECUTION_ID
+            type: NUMBER(19, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: START_TIME
+            type: TIMESTAMP(6)
+        - column:
+            name: END_TIME
+            type: TIMESTAMP(6)
+        - column:
+            name: STATUS
+            type: VARCHAR2(10 BYTE)
+        - column:
+            name: COMMIT_COUNT
+            type: NUMBER(19, 0)
+        - column:
+            name: READ_COUNT
+            type: NUMBER(19, 0)
+        - column:
+            name: FILTER_COUNT
+            type: NUMBER(19, 0)
+        - column:
+            name: WRITE_COUNT
+            type: NUMBER(19, 0)
+        - column:
+            name: READ_SKIP_COUNT
+            type: NUMBER(19, 0)
+        - column:
+            name: WRITE_SKIP_COUNT
+            type: NUMBER(19, 0)
+        - column:
+            name: PROCESS_SKIP_COUNT
+            type: NUMBER(19, 0)
+        - column:
+            name: ROLLBACK_COUNT
+            type: NUMBER(19, 0)
+        - column:
+            name: EXIT_CODE
+            type: VARCHAR2(2500 BYTE)
+        - column:
+            name: EXIT_MESSAGE
+            type: VARCHAR2(2500 BYTE)
+        - column:
+            name: LAST_UPDATED
+            type: TIMESTAMP(6)
+        tableName: BATCH_STEP_EXECUTION
+- changeSet:
+    id: 1496329844613-10
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: STEP_EXECUTION_ID
+            type: NUMBER(19, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: SHORT_CONTEXT
+            type: VARCHAR2(2500 BYTE)
+        - column:
+            name: SERIALIZED_CONTEXT
+            type: CLOB
+        tableName: BATCH_STEP_EXECUTION_CONTEXT
+- changeSet:
+    id: 1496329844613-11
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: IMPORT_DATE
+            type: TIMESTAMP(6)
+        - column:
+            name: ALIQUOTAIVA
+            type: NUMBER(19, 2)
+        - column:
+            name: ARROTONDAMENTO
+            type: NUMBER(19, 2)
+        - column:
+            name: ESIGIBILITAIVA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: IMPONIBILE_IMPORTO
+            type: NUMBER(19, 2)
+        - column:
+            name: IMPOSTA
+            type: NUMBER(19, 2)
+        - column:
+            name: NATURA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: RIFERIMENTO_NORMATIVO
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: SPESE_ACCESSORIE
+            type: NUMBER(19, 2)
+        - column:
+            name: INVOICE_ID
+            type: VARCHAR2(255 CHAR)
+        tableName: DATI_RIEPILOGO
+- changeSet:
+    id: 1496329844613-12
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: IMPORT_DATE
+            type: TIMESTAMP(6)
+        - column:
+            name: CIG_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CODICECUP
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CODICE_COMMESSA_CONVENZIONE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: DATA
+            type: date
+        - column:
+            name: DOCUMENT_ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: DOCUMENTO_CORRELATO_TYPE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: NUM_ITEM
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_ID
+            type: VARCHAR2(255 CHAR)
+        tableName: DOCUMENTO_CORRELATO
+- changeSet:
+    id: 1496329844613-13
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: DOCUMENTO_CORRELATO_ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            constraints:
+              nullable: false
+            name: PURCHASE_LINE_ID
+            type: VARCHAR2(255 CHAR)
+        tableName: DOCUMENTO_CORR_PURCHASE_LINE
+- changeSet:
+    id: 1496329844613-14
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: IMPORT_DATE
+            type: TIMESTAMP(6)
+        - column:
+            name: AL_CASSA
+            type: NUMBER(19, 2)
+        - column:
+            name: ALIQUOTA_IVA_CASSA
+            type: NUMBER(19, 2)
+        - column:
+            name: ALIQUOTA_RITENUTA
+            type: NUMBER(19, 2)
+        - column:
+            name: ART73
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: BENEFICIARIO_PAG
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CAP_RESA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CAUSALE_PAG_RITENUTA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CAUSALE_TRASPORTO
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CF_QUIETANZANTE_PAG
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: COD_UFFICIO_POSTALE_PAG
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CODICE_PAG
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: COGNOME_QUIETANZANTE_PAG
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: COMUNE_RESA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CURRENCY
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: DATA_DECORRENZA_PENALE_PAG
+            type: date
+        - column:
+            name: DATA_INIZIO_TRASPORTO
+            type: date
+        - column:
+            name: DATA_LIMITE_PAG_ANTICIPATO
+            type: date
+        - column:
+            name: DATA_ORA_CONSEGNA
+            type: date
+        - column:
+            name: DATA_ORA_RITIRO
+            type: date
+        - column:
+            name: DATA_RIFERIMENTO_TERMINI_PAG
+            type: date
+        - column:
+            name: DATA_VEICOLI
+            type: date
+        - column:
+            name: DESCRIPTION
+            type: CLOB
+        - column:
+            name: DESCRIZIONE_TRASPORTO
+            type: CLOB
+        - column:
+            name: DISCOUNT_AMOUNT
+            type: NUMBER(19, 2)
+        - column:
+            name: DISCOUNT_PERCENTAGE
+            type: NUMBER(19, 2)
+        - column:
+            name: DISCOUNT_TYPE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: DOCUMENT_TYPE_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: FINANCIAL_INSTITUTION_ABI
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: FINANCIAL_INSTITUTION_BIC
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: FINANCIAL_INSTITUTION_CAB
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: FINANCIAL_INSTITUTION_IBAN
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: FINANCIAL_INSTITUTION_NAME
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: IMPONIBILE_CASSA
+            type: NUMBER(19, 2)
+        - column:
+            name: IMPORTO_CONTRIBUTO_CASSA
+            type: NUMBER(19, 2)
+        - column:
+            name: IMPORTO_RITENUTA
+            type: NUMBER(19, 2)
+        - column:
+            name: INDIRIZZO_RESA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_DATE
+            type: date
+        - column:
+            name: INVOICE_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_SENDER_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_SENDER_COUNTRY_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_SENDER_EMAIL_ADDRESS
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_SENDER_PHONE_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_SENDING_FORMAT
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_SENDING_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: MAIN_INVOICE_DATE
+            type: date
+        - column:
+            name: MAIN_INVOICE_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: MEZZO_TRASPORTO
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: NATURA_CASSA
+            type: NUMBER(10, 0)
+        - column:
+            name: NAZIONE_RESA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: NOME_QUIETANZANTE_PAG
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: NUMERO_CIVICO_RESA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: NUMERO_COLLI
+            type: NUMBER(10, 0)
+        - column:
+            name: PAYMENT_AMOUNT
+            type: NUMBER(19, 2)
+        - column:
+            name: PAYMENT_CONDITIONS
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PAYMENT_EXPIRATION_DATE
+            type: date
+        - column:
+            name: PAYMENT_MODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PAYMENT_TERM_DAYS
+            type: NUMBER(10, 0)
+        - column:
+            name: PENALITA_PAGAMENTI_RITARDATI
+            type: NUMBER(19, 2)
+        - column:
+            name: PESO_LORDO
+            type: NUMBER(19, 2)
+        - column:
+            name: PESO_NETTO
+            type: NUMBER(19, 2)
+        - column:
+            name: PROVINCIA_RESA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: RECIPIENT_CERT_EMAIL_ADDR
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: RECIPIENT_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: RIFERIMENTO_AMMIN_CASSA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: RIFERIMENTO_FASE
+            type: NUMBER(10, 0)
+        - column:
+            name: RITENUTA_CASSA
+            type: NUMBER(10, 0)
+        - column:
+            name: ROUNDING
+            type: NUMBER(19, 2)
+        - column:
+            name: SCONTO_PAG_ANTICIPATO_PAG
+            type: NUMBER(19, 2)
+        - column:
+            name: SOGGETTO_EMITTENTE_TYPE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: STAMP_AMOUNT
+            type: NUMBER(19, 2)
+        - column:
+            name: TIPO_CASSA
+            type: NUMBER(10, 0)
+        - column:
+            name: TIPO_RESA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TIPO_RITENUTA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TITOLO_QUIETANZANTE_PAG
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TOTAL_AMOUNT
+            type: NUMBER(19, 2)
+        - column:
+            name: TOTALE_PERCORSO_VEICOLI
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: UNITA_MISURA_PESO
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: VERSION
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: VIRTUAL_STAMP
+            type: VARCHAR2(255 CHAR)
+        tableName: INVOICE
+- changeSet:
+    id: 1496329844613-15
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: IMPORT_DATE
+            type: TIMESTAMP(6)
+        - column:
+            name: ADMINISTRATIVE_REFERENCE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CITY
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CLEARANCE_STATE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: COUNTRY
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: DISTRICT
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: EMAIL_ADDRESS
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: EORI_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: FAX_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: FIRST_NAME
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: HOUSE_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: LAST_NAME
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: NAME
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: NUMERO_LICENZA_GUIDA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PERM_EST_CITY
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PERM_EST_COUNTRY
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PERM_EST_DISTRICT
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PERM_EST_HOUSE_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PERM_EST_STREET_ADDRESS
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PERM_EST_ZIP_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PHONE_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PROFESSIONAL_REG
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PROFESSIONAL_REG_DISTRICT
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PROFESSIONAL_REG_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PROFESSIONAL_REG_SUBSCR_DATE
+            type: date
+        - column:
+            name: REA_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: REA_OFFICE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: SHARE_CAPITAL
+            type: NUMBER(19, 2)
+        - column:
+            name: SOCIAL_SECURITY_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: SOLE_STAKEHOLDER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: STREET_ADDRESS
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TAX_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TAX_COUNTRY_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TAX_REPRESENTATIVE_COUNTRY_ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TAX_REPRESENTATIVE_FIRST_NAME
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TAX_REPRESENTATIVE_ID_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TAX_REPRESENTATIVE_LAST_NAME
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TAX_REPRESENTATIVE_NAME
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TAX_SYSTEM
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TITLE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TYPE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: ZIP_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: INVOICE_ID
+            type: VARCHAR2(255 CHAR)
+        tableName: INVOICE_PARTICIPANT
+- changeSet:
+    id: 1496329844613-16
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: IMPORT_DATE
+            type: TIMESTAMP(6)
+        - column:
+            name: ACCOUNT_HOLDER_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: ACCOUNT_HOLDER_TYPE_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: AIC
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CUSTOMER_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: CUSTOMER_TYPE_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: DOCUMENT_NUMBER
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: DOCUMENT_TYPE_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: EXPIRATION_DATE
+            type: date
+        - column:
+            name: LOT
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: MOVEMENT_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: QUANTITY
+            type: FLOAT(22)
+        - column:
+            name: RECIPIENT_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: RECIPIENT_TYPE_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: SENDER_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: SENDER_TYPE_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TRANSMISSION_DATE_TIME
+            type: TIMESTAMP(6)
+        - column:
+            name: VALUE
+            type: FLOAT(22)
+        tableName: MOVEMENT
+- changeSet:
+    id: 1496329844613-17
+    author: ferrarimarco
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: IMPORT_DATE
+            type: TIMESTAMP(6)
+        - column:
+            name: ADMINISTRATIVE_REFERENCE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: DOCUMENT_ID
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: ITEM_CODE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: ITEM_CODE_TYPE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: ITEM_DESCRIPTION
+            type: CLOB
+        - column:
+            name: KIND
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: OTHER_MGMT_DATA_DATA_TYPE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: OTHER_MGMT_DATA_DATE
+            type: date
+        - column:
+            name: OTHER_MGMT_DATA_REF_NUMBER
+            type: NUMBER(19, 2)
+        - column:
+            name: OTHER_MGMT_DATA_REF_TEXT
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: PERIOD_END_DATE
+            type: date
+        - column:
+            name: PERIOD_START_DATE
+            type: date
+        - column:
+            name: QUANTITY
+            type: NUMBER(19, 2)
+        - column:
+            name: RITENUTA
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: SCONTO_MAGG_AMOUNT
+            type: NUMBER(19, 2)
+        - column:
+            name: SCONTO_MAGG_PERCENTAGE
+            type: NUMBER(19, 2)
+        - column:
+            name: SCONTO_MAGG_TYPE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TAX_RATE
+            type: NUMBER(19, 2)
+        - column:
+            name: TIPO_CESSAZIONE_PRESTAZIONE
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: TOTAL_PRICE
+            type: NUMBER(19, 2)
+        - column:
+            name: UNIT_OF_MEASURE_DESCRIPTION
+            type: VARCHAR2(255 CHAR)
+        - column:
+            name: UNIT_PRICE
+            type: NUMBER(19, 2)
+        - column:
+            name: INVOICE_ID
+            type: VARCHAR2(255 CHAR)
+        tableName: PURCHASE_LINE
+- changeSet:
+    id: 1496329844613-18
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID
+        indexName: ATTACHMENTPK
+        tableName: ATTACHMENT
+        unique: true
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: ATTACHMENTPK
+        forIndexName: ATTACHMENTPK
+        tableName: ATTACHMENT
+- changeSet:
+    id: 1496329844613-19
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID
+        indexName: DATI_RIEPILOGOPK
+        tableName: DATI_RIEPILOGO
+        unique: true
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: DATI_RIEPILOGOPK
+        forIndexName: DATI_RIEPILOGOPK
+        tableName: DATI_RIEPILOGO
+- changeSet:
+    id: 1496329844613-20
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID
+        indexName: DOCUMENTO_CORRELATOPK
+        tableName: DOCUMENTO_CORRELATO
+        unique: true
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: DOCUMENTO_CORRELATOPK
+        forIndexName: DOCUMENTO_CORRELATOPK
+        tableName: DOCUMENTO_CORRELATO
+- changeSet:
+    id: 1496329844613-21
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID
+        indexName: INVOICEPK
+        tableName: INVOICE
+        unique: true
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: INVOICEPK
+        forIndexName: INVOICEPK
+        tableName: INVOICE
+- changeSet:
+    id: 1496329844613-22
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID
+        indexName: INVOICE_PARTICIPANTPK
+        tableName: INVOICE_PARTICIPANT
+        unique: true
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: INVOICE_PARTICIPANTPK
+        forIndexName: INVOICE_PARTICIPANTPK
+        tableName: INVOICE_PARTICIPANT
+- changeSet:
+    id: 1496329844613-23
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID
+        indexName: MOVEMENTPK
+        tableName: MOVEMENT
+        unique: true
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: MOVEMENTPK
+        forIndexName: MOVEMENTPK
+        tableName: MOVEMENT
+- changeSet:
+    id: 1496329844613-24
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID
+        indexName: PURCHASE_LINEPK
+        tableName: PURCHASE_LINE
+        unique: true
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: PURCHASE_LINEPK
+        forIndexName: PURCHASE_LINEPK
+        tableName: PURCHASE_LINE
+- changeSet:
+    id: 1496329844613-25
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: DOCUMENTO_CORRELATO_ID
+        - column:
+            name: PURCHASE_LINE_ID
+        indexName: SYS_C00250402
+        tableName: DOCUMENTO_CORR_PURCHASE_LINE
+        unique: true
+    - addPrimaryKey:
+        columnNames: DOCUMENTO_CORRELATO_ID, PURCHASE_LINE_ID
+        constraintName: SYS_C00250402
+        forIndexName: SYS_C00250402
+        tableName: DOCUMENTO_CORR_PURCHASE_LINE
+- changeSet:
+    id: 1496329844613-26
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: JOB_INSTANCE_ID
+        indexName: SYS_C00250420
+        tableName: BATCH_JOB_INSTANCE
+        unique: true
+    - addPrimaryKey:
+        columnNames: JOB_INSTANCE_ID
+        constraintName: SYS_C00250420
+        forIndexName: SYS_C00250420
+        tableName: BATCH_JOB_INSTANCE
+- changeSet:
+    id: 1496329844613-27
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: JOB_EXECUTION_ID
+        indexName: SYS_C00250425
+        tableName: BATCH_JOB_EXECUTION
+        unique: true
+    - addPrimaryKey:
+        columnNames: JOB_EXECUTION_ID
+        constraintName: SYS_C00250425
+        forIndexName: SYS_C00250425
+        tableName: BATCH_JOB_EXECUTION
+- changeSet:
+    id: 1496329844613-28
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: STEP_EXECUTION_ID
+        indexName: SYS_C00250437
+        tableName: BATCH_STEP_EXECUTION
+        unique: true
+    - addPrimaryKey:
+        columnNames: STEP_EXECUTION_ID
+        constraintName: SYS_C00250437
+        forIndexName: SYS_C00250437
+        tableName: BATCH_STEP_EXECUTION
+- changeSet:
+    id: 1496329844613-29
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: STEP_EXECUTION_ID
+        indexName: SYS_C00250441
+        tableName: BATCH_STEP_EXECUTION_CONTEXT
+        unique: true
+    - addPrimaryKey:
+        columnNames: STEP_EXECUTION_ID
+        constraintName: SYS_C00250441
+        forIndexName: SYS_C00250441
+        tableName: BATCH_STEP_EXECUTION_CONTEXT
+- changeSet:
+    id: 1496329844613-30
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: JOB_EXECUTION_ID
+        indexName: SYS_C00250445
+        tableName: BATCH_JOB_EXECUTION_CONTEXT
+        unique: true
+    - addPrimaryKey:
+        columnNames: JOB_EXECUTION_ID
+        constraintName: SYS_C00250445
+        forIndexName: SYS_C00250445
+        tableName: BATCH_JOB_EXECUTION_CONTEXT
+- changeSet:
+    id: 1496329844613-31
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: JOB_NAME
+        - column:
+            name: JOB_KEY
+        indexName: JOB_INST_UN
+        tableName: BATCH_JOB_INSTANCE
+        unique: true
+    - addUniqueConstraint:
+        columnNames: JOB_NAME, JOB_KEY
+        constraintName: JOB_INST_UN
+        forIndexName: JOB_INST_UN
+        tableName: BATCH_JOB_INSTANCE
+- changeSet:
+    id: 1496329844613-32
+    author: ferrarimarco
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: CF_CREDITORE
+        indexName: TMP_MEF_PCC_IDX
+        tableName: MEF_PCC_QW_FATT
+- changeSet:
+    id: 1496329844613-33
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: INVOICE_ID
+        baseTableName: INVOICE_PARTICIPANT
+        constraintName: FK1R1U0BDSVTBEIUTUAVX13GMNR
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: INVOICE
+- changeSet:
+    id: 1496329844613-34
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: INVOICE_ID
+        baseTableName: ATTACHMENT
+        constraintName: FKAPETYEV9J9MLNDTDPJY0MHEVL
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: INVOICE
+- changeSet:
+    id: 1496329844613-35
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: INVOICE_ID
+        baseTableName: DATI_RIEPILOGO
+        constraintName: FKBSAXN93M19TA6ONB54K9JQ03F
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: INVOICE
+- changeSet:
+    id: 1496329844613-36
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: INVOICE_ID
+        baseTableName: PURCHASE_LINE
+        constraintName: FKHNS01UTTNAWTFHLDAI1OWNGM
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: INVOICE
+- changeSet:
+    id: 1496329844613-37
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: INVOICE_ID
+        baseTableName: DOCUMENTO_CORRELATO
+        constraintName: FKHNW9ML89FGCFU6GWF8VEL6U5K
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: INVOICE
+- changeSet:
+    id: 1496329844613-38
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: PURCHASE_LINE_ID
+        baseTableName: DOCUMENTO_CORR_PURCHASE_LINE
+        constraintName: FKL5SJTHRPI9N2L6FJVYKJ5W704
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: PURCHASE_LINE
+- changeSet:
+    id: 1496329844613-39
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: DOCUMENTO_CORRELATO_ID
+        baseTableName: DOCUMENTO_CORR_PURCHASE_LINE
+        constraintName: FKQRW1R3M1GOBXCWYF9N773083Q
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: DOCUMENTO_CORRELATO
+- changeSet:
+    id: 1496329844613-40
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: JOB_EXECUTION_ID
+        baseTableName: BATCH_JOB_EXECUTION_CONTEXT
+        constraintName: JOB_EXEC_CTX_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: JOB_EXECUTION_ID
+        referencedTableName: BATCH_JOB_EXECUTION
+- changeSet:
+    id: 1496329844613-41
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: JOB_EXECUTION_ID
+        baseTableName: BATCH_JOB_EXECUTION_PARAMS
+        constraintName: JOB_EXEC_PARAMS_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: JOB_EXECUTION_ID
+        referencedTableName: BATCH_JOB_EXECUTION
+- changeSet:
+    id: 1496329844613-42
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: JOB_EXECUTION_ID
+        baseTableName: BATCH_STEP_EXECUTION
+        constraintName: JOB_EXEC_STEP_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: JOB_EXECUTION_ID
+        referencedTableName: BATCH_JOB_EXECUTION
+- changeSet:
+    id: 1496329844613-43
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: JOB_INSTANCE_ID
+        baseTableName: BATCH_JOB_EXECUTION
+        constraintName: JOB_INST_EXEC_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: JOB_INSTANCE_ID
+        referencedTableName: BATCH_JOB_INSTANCE
+- changeSet:
+    id: 1496329844613-44
+    author: ferrarimarco
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: STEP_EXECUTION_ID
+        baseTableName: BATCH_STEP_EXECUTION_CONTEXT
+        constraintName: STEP_EXEC_CTX_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: STEP_EXECUTION_ID
+        referencedTableName: BATCH_STEP_EXECUTION

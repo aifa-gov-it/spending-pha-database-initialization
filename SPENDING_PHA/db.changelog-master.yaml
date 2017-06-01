@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - preConditions:
+    - or:
+      - dbms:
+          type: h2
+      - and:
+        - dbms:
+            type: oracle
+        - runningAs:
+            username: SPENDING_PHA
+  - include:
+      file: db.changelog-database-uploader-1.0.0.yaml
+  - include:
+      file: db.changelog-1.0.0.yaml

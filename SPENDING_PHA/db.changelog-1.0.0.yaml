@@ -1,0 +1,26 @@
+databaseChangeLog:
+- changeSet:
+    id: 1496329844613-45
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: REGIONE
+            type: VARCHAR2(30 BYTE)
+        - column:
+            name: STRUTTURA
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: CREDITORE
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: CF_CREDITORE
+            type: VARCHAR2(30 BYTE)
+        - column:
+            name: TOT_FATTURE
+            type: NUMBER(12, 2)
+        - column:
+            name: ANNO
+            type: NUMBER(4, 0)
+        tableName: MEF_PCC_QW_FATT
