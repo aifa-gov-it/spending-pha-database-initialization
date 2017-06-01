@@ -1162,16 +1162,6 @@ databaseChangeLog:
         forIndexName: JOB_INST_UN
         tableName: BATCH_JOB_INSTANCE
 - changeSet:
-    id: 1496329844613-32
-    author: ferrarimarco
-    changes:
-    - createIndex:
-        columns:
-        - column:
-            name: CF_CREDITORE
-        indexName: TMP_MEF_PCC_IDX
-        tableName: MEF_PCC_QW_FATT
-- changeSet:
     id: 1496329844613-33
     author: ferrarimarco
     changes:
