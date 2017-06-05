@@ -1557,3 +1557,10 @@ databaseChangeLog:
     - renameTable:
         newTableName: MEF_DOC_CORR_LINEA_ACQUISTO
         oldTableName: DOCUMENTO_CORR_PURCHASE_LINE
+- changeSet:
+    id: 1496329844613-52
+    author: ferrarimarco
+    changes:
+    - renameTable:
+        newTableName: MDS_MOV
+        oldTableName: MOVEMENT
