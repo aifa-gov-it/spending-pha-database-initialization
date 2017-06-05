@@ -752,6 +752,9 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+        - column:
             name: CODICE
             value: P
         - column:
@@ -760,6 +763,9 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
+        - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: D
@@ -770,6 +776,9 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+        - column:
             name: CODICE
             value: D
         - column:
@@ -778,6 +787,9 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
+        - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: S
@@ -788,6 +800,9 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+        - column:
             name: CODICE
             value: F
         - column:
@@ -796,6 +811,9 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
+        - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: I
@@ -806,6 +824,9 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+        - column:
             name: CODICE
             value: U
         - column:
@@ -814,6 +835,9 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
+        - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: Z
@@ -824,6 +848,9 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+        - column:
             name: CODICE
             value: A
         - column:
@@ -832,6 +859,9 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
+        - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: R
@@ -842,6 +872,9 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+        - column:
             name: CODICE
             value: T
         - column:
@@ -850,6 +883,9 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
+        - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: T
@@ -860,6 +896,9 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+        - column:
             name: CODICE
             value: T
         - column:
@@ -868,6 +907,9 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
+        - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: L
@@ -878,6 +920,9 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+        - column:
             name: CODICE
             value: E
         - column:
@@ -886,6 +931,9 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
+        - column:
+            name: ID
+            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: C
