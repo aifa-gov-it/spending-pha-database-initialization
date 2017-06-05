@@ -318,7 +318,7 @@ databaseChangeLog:
               nullable: false
             name: DESCRIZIONE
             remarks: Paese estero
-            type: VARCHAR2(30 BYTE)
+            type: VARCHAR2(60 BYTE)
         - column:
             name: CODICE_ISTAT
             remarks: Codice ISTAT del Paese Estero
