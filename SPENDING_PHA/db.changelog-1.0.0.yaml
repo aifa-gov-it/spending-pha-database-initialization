@@ -34,3 +34,10 @@ databaseChangeLog:
             name: CF_CREDITORE
         indexName: MEF_PCC_IDX
         tableName: MEF_PCC_QW_FATT
+- changeSet:
+    id: 1496329844613-33
+    author: ferrarimarco
+    changes:
+    - renameTable:
+        newTableName: MEF_PCC_QV_FATT
+        oldTableName: MEF_PCC_QW_FATT
