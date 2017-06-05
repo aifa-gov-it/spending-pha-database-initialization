@@ -745,3 +745,151 @@ databaseChangeLog:
         onUpdate: RESTRICT
         referencedColumnNames: CODICE
         referencedTableName: MDS_COMUNE
+- changeSet:
+    id: 1496659488940-36
+    author: lellomelchionda
+    changes:
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: P
+        - column:
+            name: DESCRIZIONE
+            value: PRODUTTORE
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: D
+        - column:
+            name: DESCRIZIONE
+            value: DEPOSITARIO
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: D
+        - column:
+            name: DESCRIZIONE
+            value: GROSSISTA
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: S
+        - column:
+            name: DESCRIZIONE
+            value: SMALTITORE
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: F
+        - column:
+            name: DESCRIZIONE
+            value: FARMACIA
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: I
+        - column:
+            name: DESCRIZIONE
+            value: IPZS
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: U
+        - column:
+            name: DESCRIZIONE
+            value: USCITA
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: Z
+        - column:
+            name: DESCRIZIONE
+            value: ALTRO
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: A
+        - column:
+            name: DESCRIZIONE
+            value: ASL
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: R
+        - column:
+            name: DESCRIZIONE
+            value: REGIONE
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: T
+        - column:
+            name: DESCRIZIONE
+            value: STRUTTURA RICOVERO PUBBLICA
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: T
+        - column:
+            name: DESCRIZIONE
+            value: STRUTTURA RICOVERO PRIVATA
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: T
+        - column:
+            name: DESCRIZIONE
+            value: ISTITUTO PENITENZIARIO
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: L
+        - column:
+            name: DESCRIZIONE
+            value: LABORATORIO ANALISI
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: E
+        - column:
+            name: DESCRIZIONE
+            value: ESTERO
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: C
+        - column:
+            name: DESCRIZIONE
+            value: ESERCIZIO COMMERCIALE
+        tableName: MDS_TIPOLOGICA_ANAG
