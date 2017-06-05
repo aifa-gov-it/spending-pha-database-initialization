@@ -1527,7 +1527,7 @@ databaseChangeLog:
     author: ferrarimarco
     changes:
     - renameTable:
-        newTableName: MEF_DOCUMENTO_CORRELATO_FATTURA
+        newTableName: MEF_DOC_CORRELATO_FATTURA
         oldTableName: DOCUMENTO_CORRELATO
 - changeSet:
     id: 1496329844613-48
@@ -1541,7 +1541,7 @@ databaseChangeLog:
     author: ferrarimarco
     changes:
     - renameTable:
-        newTableName: MEF_SOGGETTO_PARTECIPANTE_FATTURA
+        newTableName: MEF_SOGGETTO_PART_FATTURA
         oldTableName: INVOICE_PARTICIPANT
 - changeSet:
     id: 1496329844613-50
