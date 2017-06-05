@@ -1550,3 +1550,10 @@ databaseChangeLog:
     - renameTable:
         newTableName: MEF_LINEA_ACQUISTO_FATTURA
         oldTableName: PURCHASE_LINE
+- changeSet:
+    id: 1496329844613-51
+    author: ferrarimarco
+    changes:
+    - renameTable:
+        newTableName: MEF_DOC_CORR_LINEA_ACQUISTO
+        oldTableName: DOCUMENTO_CORR_PURCHASE_LINE
