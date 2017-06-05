@@ -11,7 +11,7 @@ databaseChangeLog:
         minValue: 0
         ordered: false
         sequenceName: SEQ_MDS_TIPOLOGICA_ANAG
-        startValue: 0
+        startValue: 1
 - changeSet:
     id: 1496659488940-2
     author: lellomelchionda
@@ -749,11 +749,18 @@ databaseChangeLog:
     id: 1496659488940-36
     author: lellomelchionda
     changes:
+    - sql:
+        comment: Trigger to pick IDs before each insert in MDS_TIPOLOGICA_ANAG
+        endDelimiter: \nCOMMIT;
+        splitStatements: true
+        sql: CREATE OR REPLACE TRIGGER SPENDING_PHA.INS_MDS_TIPOLOGICA_ANAG BEFORE INSERT ON SPENDING_PHA.MDS_TIPOLOGICA_ANAG REFERENCING OLD AS OLD NEW AS NEW FOR EACH ROW BEGIN IF :NEW.ID IS NULL THEN SELECT SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL INTO :NEW.ID FROM DUAL; END IF; END; SHOW ERRORS;
+        stripComments: true
+- changeSet:
+    id: 1496659488940-37
+    author: lellomelchionda
+    changes:
     - insert:
         columns:
-        - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: P
@@ -764,9 +771,6 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
-        - column:
             name: CODICE
             value: D
         - column:
@@ -775,9 +779,6 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
-        - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: D
@@ -788,9 +789,6 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
-        - column:
             name: CODICE
             value: S
         - column:
@@ -799,9 +797,6 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
-        - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: F
@@ -812,9 +807,6 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
-        - column:
             name: CODICE
             value: I
         - column:
@@ -823,9 +815,6 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
-        - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: U
@@ -836,9 +825,6 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
-        - column:
             name: CODICE
             value: Z
         - column:
@@ -847,9 +833,6 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
-        - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: A
@@ -860,9 +843,6 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
-        - column:
             name: CODICE
             value: R
         - column:
@@ -871,9 +851,6 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
-        - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: T
@@ -884,9 +861,6 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
-        - column:
             name: CODICE
             value: T
         - column:
@@ -895,9 +869,6 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
-        - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: T
@@ -908,9 +879,6 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
-        - column:
             name: CODICE
             value: L
         - column:
@@ -920,9 +888,6 @@ databaseChangeLog:
     - insert:
         columns:
         - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
-        - column:
             name: CODICE
             value: E
         - column:
@@ -931,9 +896,6 @@ databaseChangeLog:
         tableName: MDS_TIPOLOGICA_ANAG
     - insert:
         columns:
-        - column:
-            name: ID
-            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: C
