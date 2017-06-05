@@ -753,7 +753,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: P
@@ -765,7 +765,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: D
@@ -777,7 +777,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: D
@@ -789,7 +789,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: S
@@ -801,7 +801,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: F
@@ -813,7 +813,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: I
@@ -825,7 +825,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: U
@@ -837,7 +837,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: Z
@@ -849,7 +849,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: A
@@ -861,7 +861,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: R
@@ -873,7 +873,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: T
@@ -885,7 +885,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: T
@@ -897,7 +897,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: T
@@ -909,7 +909,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: L
@@ -921,7 +921,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: E
@@ -933,7 +933,7 @@ databaseChangeLog:
         columns:
         - column:
             name: ID
-            value: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
+            valueComputed: SEQ_MDS_TIPOLOGICA_ANAG.NEXTVAL
         - column:
             name: CODICE
             value: C
