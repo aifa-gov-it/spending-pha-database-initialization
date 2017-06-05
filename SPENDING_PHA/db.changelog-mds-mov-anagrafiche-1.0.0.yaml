@@ -1,0 +1,747 @@
+databaseChangeLog:
+- changeSet:
+    id: 1496659488940-1
+    author: lellomelchionda
+    changes:
+    - createSequence:
+        cacheSize: 0
+        cycle: false
+        incrementBy: 1
+        maxValue: 99
+        minValue: 1
+        ordered: false
+        sequenceName: SEQ_MDS_TIPOLOGICA_ANAG
+        startValue: 1
+- changeSet:
+    id: 1496659488940-2
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: CODICE
+            remarks: Codice identificativo della ASL
+            type: NUMBER(3, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: DENOMINAZIONE
+            remarks: Denominazione della ASL
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: PARTITA_IVA
+            remarks: Partita IVA della ASL
+            type: VARCHAR2(30 BYTE)
+        - column:
+            name: INDIRIZZO
+            remarks: Indirizzo della ASL
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: CAP
+            remarks: CAP della ASL
+            type: NUMBER(5, 0)
+        - column:
+            name: COMUNE
+            remarks: Comune della ASL
+            type: VARCHAR2(80 BYTE)
+        - column:
+            name: SIGLA_PROVINCIA
+            remarks: Sigla della Provincia della ASL
+            type: VARCHAR2(2 BYTE)
+        - column:
+            name: CODICE_REGIONE
+            remarks: Codice ISTAT della Regione della ASL
+            type: NUMBER(3, 0)
+        - column:
+            name: TELEFONO
+            remarks: Telefono della ASL
+            type: VARCHAR2(20 BYTE)
+        - column:
+            name: FAX
+            remarks: Fax della ASL
+            type: VARCHAR2(20 BYTE)
+        - column:
+            name: EMAIL
+            remarks: Email della ASL
+            type: VARCHAR2(30 BYTE)
+        - column:
+            name: SITO_WEB
+            remarks: Sito web della ASL
+            type: VARCHAR2(30 BYTE)
+        - column:
+            constraints:
+              nullable: false
+            name: ANNO
+            remarks: Anno validità
+            type: NUMBER(4, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: ID_TIPO_ANAG
+            remarks: ID del tipo di anagrafica
+            type: NUMBER(2, 0)
+        tableName: MDS_ANAG_ASL
+- changeSet:
+    id: 1496659488940-3
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: CODICE
+            remarks: Codice identificativo della Farmacia
+            type: NUMBER(10, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: DENOMINAZIONE
+            remarks: Denominazione della Farmacia
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: PARTITA_IVA
+            remarks: Partita IVA della Farmacia
+            type: VARCHAR2(30 BYTE)
+        - column:
+            name: INDIRIZZO
+            remarks: Indirizzo della Farmacia
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: CAP
+            remarks: CAP della Farmacia
+            type: NUMBER(5, 0)
+        - column:
+            name: FRAZIONE
+            remarks: Frazione della Farmacia
+            type: VARCHAR2(80 BYTE)
+        - column:
+            name: CODICE_COMUNE
+            remarks: Codice ISTAT del Comune della Farmacia
+            type: NUMBER(6, 0)
+        - column:
+            name: CODICE_PROVINCIA
+            remarks: Codice ISTAT della Provincia della Farmacia
+            type: NUMBER(3, 0)
+        - column:
+            name: CODICE_REGIONE
+            remarks: Codice ISTAT della Regione della Farmacia
+            type: NUMBER(3, 0)
+        - column:
+            name: DATA_INIZIO_VALIDITA
+            remarks: Data inizio validità
+            type: date
+        - column:
+            name: DATA_FINE_VALIDITA
+            remarks: Data fine validità
+            type: date
+        - column:
+            name: LATITUDINE
+            remarks: Latitudine
+            type: NUMBER(2, 10)
+        - column:
+            name: LONGITUDINE
+            remarks: Longitudine
+            type: NUMBER(2, 10)
+        - column:
+            name: LOCALIZE
+            remarks: Localizzato
+            type: NUMBER(1, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: ID_TIPO_ANAG
+            remarks: ID del tipo di anagrafica
+            type: NUMBER(2, 0)
+        tableName: MDS_ANAG_FARMACIA
+- changeSet:
+    id: 1496659488940-4
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: CODICE
+            remarks: Codice identificativo del Produttore, Distributore o Grossista
+            type: NUMBER(10, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: DENOMINAZIONE
+            remarks: Denominazione del Produttore, Distributore o Grossista
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: PARTITA_IVA
+            remarks: Partita IVA del Produttore, Distributore o Grossista
+            type: VARCHAR2(30 BYTE)
+        - column:
+            name: INDIRIZZO
+            remarks: Indirizzo del Produttore, Distributore o Grossista
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: CAP
+            remarks: CAP del Produttore, Distributore o Grossista
+            type: NUMBER(5, 0)
+        - column:
+            name: CODICE_COMUNE
+            remarks: Codice ISTAT del Comune del Produttore, Distributore o Grossista
+            type: NUMBER(6, 0)
+        - column:
+            name: CODICE_PROVINCIA
+            remarks: Codice ISTAT della Provincia del Produttore, Distributore o Grossista
+            type: NUMBER(3, 0)
+        - column:
+            name: CODICE_REGIONE
+            remarks: Codice ISTAT della Regione del Produttore, Distributore o Grossista
+            type: NUMBER(3, 0)
+        - column:
+            name: DATA_INIZIO_VALIDITA
+            remarks: Data inizio validità
+            type: date
+        - column:
+            name: DATA_FINE_VALIDITA
+            remarks: Data fine validità
+            type: date
+        - column:
+            name: LATITUDINE
+            remarks: Latitudine
+            type: NUMBER(2, 10)
+        - column:
+            name: LONGITUDINE
+            remarks: Longitudine
+            type: NUMBER(2, 10)
+        - column:
+            name: LOCALIZE
+            remarks: Localizzato
+            type: NUMBER(1, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: ID_TIPO_ANAG
+            remarks: ID del tipo di anagrafica
+            type: NUMBER(2, 0)
+        tableName: MDS_ANAG_PDG
+- changeSet:
+    id: 1496659488940-5
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: ID
+            remarks: Codice identificativo della struttura pubblica, privata o istituto penitenziario
+            type: VARCHAR2(12 BYTE)
+        - column:
+            constraints:
+              nullable: false
+            name: DENOMINAZIONE
+            remarks: Denominazione della struttura pubblica, privata o istituto penitenziario
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: INDIRIZZO
+            remarks: Indirizzo della struttura pubblica, privata o istituto penitenziario
+            type: VARCHAR2(255 BYTE)
+        - column:
+            name: CAP
+            remarks: CAP della struttura pubblica, privata o istituto penitenziario
+            type: NUMBER(5, 0)
+        - column:
+            name: COMUNE
+            remarks: Comune della struttura pubblica, privata o istituto penitenziario
+            type: VARCHAR2(80 BYTE)
+        - column:
+            name: SIGLA_PROVINCIA
+            remarks: Sigla delle Provincia della struttura pubblica, privata o istituto penitenziario
+            type: VARCHAR2(2 BYTE)
+        - column:
+            name: CODICE_REGIONE
+            remarks: Codice ISTAT della Regione della struttura pubblica, privata o istituto penitenziario
+            type: NUMBER(3, 0)
+        - column:
+            name: DATA_INIZIO_VALIDITA
+            remarks: Inizio validità
+            type: date
+        - column:
+            name: DATA_FINE_VALIDITA
+            remarks: Fine validità
+            type: date
+        - column:
+            constraints:
+              nullable: false
+            name: ID_TIPO_ANAG
+            remarks: ID del tipo di anagrafica
+            type: NUMBER(2, 0)
+        tableName: MDS_ANAG_SR_PUB_PVT_IP
+- changeSet:
+    id: 1496659488940-6
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: CODICE
+            remarks: Codice ISTAT del Comune
+            type: NUMBER(6, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: DESCRIZIONE
+            remarks: Descrizione del Comune
+            type: VARCHAR2(80 BYTE)
+        tableName: MDS_COMUNE
+- changeSet:
+    id: 1496659488940-7
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: CODICE_ISO
+            remarks: Codice ISO
+            type: VARCHAR2(2 BYTE)
+        - column:
+            name: CODICE_ISO_3
+            remarks: Codice ISO lunghezza 3
+            type: VARCHAR2(3 BYTE)
+        - column:
+            constraints:
+              nullable: false
+            name: DESCRIZIONE
+            remarks: Paese estero
+            type: VARCHAR2(30 BYTE)
+        - column:
+            name: CODICE_ISTAT
+            remarks: Codice ISTAT del Paese Estero
+            type: NUMBER(3, 0)
+        tableName: MDS_PAESE_ESTERO
+- changeSet:
+    id: 1496659488940-8
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: CODICE
+            remarks: Codice ISTAT della Provincia
+            type: NUMBER(3, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: DESCRIZIONE
+            remarks: Descrizione della Provincia
+            type: VARCHAR2(30 BYTE)
+        - column:
+            constraints:
+              nullable: false
+            name: SIGLA
+            remarks: Sigla della Provincia
+            type: VARCHAR2(2 BYTE)
+        tableName: MDS_PROVINCIA
+- changeSet:
+    id: 1496659488940-9
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: CODICE
+            remarks: Codice ISTAT della Regione
+            type: NUMBER(3, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: DESCRIZIONE
+            remarks: Descrizione della Regione
+            type: VARCHAR2(30 BYTE)
+        tableName: MDS_REGIONE
+- changeSet:
+    id: 1496659488940-10
+    author: lellomelchionda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: ID
+            remarks: ID tipologica anagrafica
+            type: NUMBER(2, 0)
+        - column:
+            constraints:
+              nullable: false
+            name: CODICE
+            remarks: Codice tipologica anagrafica
+            type: VARCHAR2(1 BYTE)
+        - column:
+            constraints:
+              nullable: false
+            name: DESCRIZIONE
+            remarks: Descrizione tipologica anagrafica
+            type: VARCHAR2(50 BYTE)
+        tableName: MDS_TIPOLOGICA_ANAG
+- changeSet:
+    id: 1496659488940-11
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: CODICE
+        indexName: MDS_ANAG_ASL_PK
+        tableName: MDS_ANAG_ASL
+        unique: true
+    - addPrimaryKey:
+        columnNames: CODICE
+        constraintName: MDS_ANAG_ASL_PK
+        forIndexName: MDS_ANAG_ASL_PK
+        tableName: MDS_ANAG_ASL
+- changeSet:
+    id: 1496659488940-12
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: CODICE
+        indexName: MDS_ANAG_FARMACIA_PK
+        tableName: MDS_ANAG_FARMACIA
+        unique: true
+    - addPrimaryKey:
+        columnNames: CODICE
+        constraintName: MDS_ANAG_FARMACIA_PK
+        forIndexName: MDS_ANAG_FARMACIA_PK
+        tableName: MDS_ANAG_FARMACIA
+- changeSet:
+    id: 1496659488940-13
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: CODICE
+        indexName: MDS_ANAG_PDG_PK
+        tableName: MDS_ANAG_PDG
+        unique: true
+    - addPrimaryKey:
+        columnNames: CODICE
+        constraintName: MDS_ANAG_PDG_PK
+        forIndexName: MDS_ANAG_PDG_PK
+        tableName: MDS_ANAG_PDG
+- changeSet:
+    id: 1496659488940-14
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID
+        indexName: MDS_ANSRPUBPVTIP_PK
+        tableName: MDS_ANAG_SR_PUB_PVT_IP
+        unique: true
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: MDS_ANSRPUBPVTIP_PK
+        forIndexName: MDS_ANSRPUBPVTIP_PK
+        tableName: MDS_ANAG_SR_PUB_PVT_IP
+- changeSet:
+    id: 1496659488940-15
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: CODICE
+        indexName: MDS_COMUNE_PK
+        tableName: MDS_COMUNE
+        unique: true
+    - addPrimaryKey:
+        columnNames: CODICE
+        constraintName: MDS_COMUNE_PK
+        forIndexName: MDS_COMUNE_PK
+        tableName: MDS_COMUNE
+- changeSet:
+    id: 1496659488940-16
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: CODICE_ISO
+        indexName: MDS_PAESE_ESTERO_PK
+        tableName: MDS_PAESE_ESTERO
+        unique: true
+    - addPrimaryKey:
+        columnNames: CODICE_ISO
+        constraintName: MDS_PAESE_ESTERO_PK
+        forIndexName: MDS_PAESE_ESTERO_PK
+        tableName: MDS_PAESE_ESTERO
+- changeSet:
+    id: 1496659488940-17
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: CODICE
+        indexName: MDS_PROVINCIA_PK
+        tableName: MDS_PROVINCIA
+        unique: true
+    - addPrimaryKey:
+        columnNames: CODICE
+        constraintName: MDS_PROVINCIA_PK
+        forIndexName: MDS_PROVINCIA_PK
+        tableName: MDS_PROVINCIA
+- changeSet:
+    id: 1496659488940-18
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: CODICE
+        indexName: MDS_REGIONE_PK
+        tableName: MDS_REGIONE
+        unique: true
+    - addPrimaryKey:
+        columnNames: CODICE
+        constraintName: MDS_REGIONE_PK
+        forIndexName: MDS_REGIONE_PK
+        tableName: MDS_REGIONE
+- changeSet:
+    id: 1496659488940-19
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID
+        indexName: MDS_TIPOLOGICA_ANAG_PK
+        tableName: MDS_TIPOLOGICA_ANAG
+        unique: true
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: MDS_TIPOLOGICA_ANAG_PK
+        forIndexName: MDS_TIPOLOGICA_ANAG_PK
+        tableName: MDS_TIPOLOGICA_ANAG
+- changeSet:
+    id: 1496659488940-20
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID_TIPO_ANAG
+        indexName: MDS_ANAG_ASL_IDX
+        tableName: MDS_ANAG_ASL
+- changeSet:
+    id: 1496659488940-21
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID_TIPO_ANAG
+        indexName: MDS_ANAG_FARMACIA_IDX
+        tableName: MDS_ANAG_FARMACIA
+- changeSet:
+    id: 1496659488940-22
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID_TIPO_ANAG
+        indexName: MDS_ANAG_PDG_IDX
+        tableName: MDS_ANAG_PDG
+- changeSet:
+    id: 1496659488940-23
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ID_TIPO_ANAG
+        indexName: MDS_ANSRPUBPVTIP_IDX
+        tableName: MDS_ANAG_SR_PUB_PVT_IP
+- changeSet:
+    id: 1496659488940-24
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: CODICE_REGIONE
+        baseTableName: MDS_ANAG_ASL
+        constraintName: MDS_ANAG_ASL_C_REG_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: CODICE
+        referencedTableName: MDS_REGIONE
+- changeSet:
+    id: 1496659488940-25
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: ID_TIPO_ANAG
+        baseTableName: MDS_ANAG_ASL
+        constraintName: MDS_ANAG_ASL_ID_T_ANAG_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: MDS_TIPOLOGICA_ANAG
+- changeSet:
+    id: 1496659488940-26
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: CODICE_PROVINCIA
+        baseTableName: MDS_ANAG_FARMACIA
+        constraintName: MDS_ANAG_FARMACIA_C_PRV_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: CODICE
+        referencedTableName: MDS_PROVINCIA
+- changeSet:
+    id: 1496659488940-27
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: CODICE_REGIONE
+        baseTableName: MDS_ANAG_FARMACIA
+        constraintName: MDS_ANAG_FARMACIA_C_REG_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: CODICE
+        referencedTableName: MDS_REGIONE
+- changeSet:
+    id: 1496659488940-28
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: ID_TIPO_ANAG
+        baseTableName: MDS_ANAG_FARMACIA
+        constraintName: MDS_ANAG_FARMACIA_ID_T_ANAG_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: MDS_TIPOLOGICA_ANAG
+- changeSet:
+    id: 1496659488940-29
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: CODICE_COMUNE
+        baseTableName: MDS_ANAG_PDG
+        constraintName: MDS_ANAG_PDG_C_COM_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: CODICE
+        referencedTableName: MDS_COMUNE
+- changeSet:
+    id: 1496659488940-30
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: CODICE_PROVINCIA
+        baseTableName: MDS_ANAG_PDG
+        constraintName: MDS_ANAG_PDG_C_PRV_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: CODICE
+        referencedTableName: MDS_PROVINCIA
+- changeSet:
+    id: 1496659488940-31
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: CODICE_REGIONE
+        baseTableName: MDS_ANAG_PDG
+        constraintName: MDS_ANAG_PDG_C_REG_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: CODICE
+        referencedTableName: MDS_REGIONE
+- changeSet:
+    id: 1496659488940-32
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: ID_TIPO_ANAG
+        baseTableName: MDS_ANAG_PDG
+        constraintName: MDS_ANAG_PDG_ID_T_ANAG_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: MDS_TIPOLOGICA_ANAG
+- changeSet:
+    id: 1496659488940-33
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: CODICE_REGIONE
+        baseTableName: MDS_ANAG_SR_PUB_PVT_IP
+        constraintName: MDS_ANSRPUBPVTIPCREG_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: CODICE
+        referencedTableName: MDS_REGIONE
+- changeSet:
+    id: 1496659488940-34
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: ID_TIPO_ANAG
+        baseTableName: MDS_ANAG_SR_PUB_PVT_IP
+        constraintName: MDS_ANSRPUBPVTIPIDTAN_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: MDS_TIPOLOGICA_ANAG
+- changeSet:
+    id: 1496659488940-35
+    author: lellomelchionda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: CODICE_COMUNE
+        baseTableName: MDS_ANAG_FARMACIA
+        constraintName: MMDS_ANAG_FARMACIA_C_COM_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: CODICE
+        referencedTableName: MDS_COMUNE
