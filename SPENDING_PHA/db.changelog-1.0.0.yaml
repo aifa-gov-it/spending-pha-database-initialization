@@ -35,7 +35,7 @@ databaseChangeLog:
         indexName: MEF_PCC_IDX
         tableName: MEF_PCC_QW_FATT
 - changeSet:
-    id: 1496329844613-33
+    id: 1496329844614-1
     author: ferrarimarco
     changes:
     - renameTable:
