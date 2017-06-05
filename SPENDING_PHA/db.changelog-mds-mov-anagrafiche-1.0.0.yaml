@@ -8,10 +8,10 @@ databaseChangeLog:
         cycle: false
         incrementBy: 1
         maxValue: 99
-        minValue: 1
+        minValue: 0
         ordered: false
         sequenceName: SEQ_MDS_TIPOLOGICA_ANAG
-        startValue: 1
+        startValue: 0
 - changeSet:
     id: 1496659488940-2
     author: lellomelchionda
