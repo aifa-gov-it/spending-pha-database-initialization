@@ -12,6 +12,19 @@ databaseChangeLog:
         ordered: false
         sequenceName: BATCH_JOB_EXECUTION_SEQ
         startValue: 180
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-1-h2
+    author: ferrarimarco
+    changes:
+    - createSequence:
+        cacheSize: 20
+        cycle: false
+        incrementBy: 1
+        ordered: false
+        sequenceName: BATCH_JOB_EXECUTION_SEQ
+        startValue: 180
+    dbms: h2
 - changeSet:
     id: 1496329844613-2
     author: ferrarimarco
@@ -25,6 +38,19 @@ databaseChangeLog:
         ordered: false
         sequenceName: BATCH_JOB_SEQ
         startValue: 80
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-2-h2
+    author: ferrarimarco
+    changes:
+    - createSequence:
+        cacheSize: 20
+        cycle: false
+        incrementBy: 1
+        ordered: false
+        sequenceName: BATCH_JOB_SEQ
+        startValue: 80
+    dbms: h2
 - changeSet:
     id: 1496329844613-3
     author: ferrarimarco
@@ -38,6 +64,19 @@ databaseChangeLog:
         ordered: false
         sequenceName: BATCH_STEP_EXECUTION_SEQ
         startValue: 180
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-3-h2
+    author: ferrarimarco
+    changes:
+    - createSequence:
+        cacheSize: 20
+        cycle: false
+        incrementBy: 1
+        ordered: false
+        sequenceName: BATCH_STEP_EXECUTION_SEQ
+        startValue: 180
+    dbms: h2
 - changeSet:
     id: 1496329844613-4
     author: ferrarimarco
@@ -949,6 +988,16 @@ databaseChangeLog:
         constraintName: ATTACHMENTPK
         forIndexName: ATTACHMENTPK
         tableName: ATTACHMENT
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-18-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: ATTACHMENTPK
+        tableName: ATTACHMENT
+    dbms: h2
 - changeSet:
     id: 1496329844613-19
     author: ferrarimarco
@@ -965,6 +1014,16 @@ databaseChangeLog:
         constraintName: DATI_RIEPILOGOPK
         forIndexName: DATI_RIEPILOGOPK
         tableName: DATI_RIEPILOGO
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-19-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: DATI_RIEPILOGOPK
+        tableName: DATI_RIEPILOGO
+    dbms: h2
 - changeSet:
     id: 1496329844613-20
     author: ferrarimarco
@@ -981,6 +1040,16 @@ databaseChangeLog:
         constraintName: DOCUMENTO_CORRELATOPK
         forIndexName: DOCUMENTO_CORRELATOPK
         tableName: DOCUMENTO_CORRELATO
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-20-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: DOCUMENTO_CORRELATOPK
+        tableName: DOCUMENTO_CORRELATO
+    dbms: h2
 - changeSet:
     id: 1496329844613-21
     author: ferrarimarco
@@ -997,6 +1066,16 @@ databaseChangeLog:
         constraintName: INVOICEPK
         forIndexName: INVOICEPK
         tableName: INVOICE
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-21-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: INVOICEPK
+        tableName: INVOICE
+    dbms: h2
 - changeSet:
     id: 1496329844613-22
     author: ferrarimarco
@@ -1013,6 +1092,16 @@ databaseChangeLog:
         constraintName: INVOICE_PARTICIPANTPK
         forIndexName: INVOICE_PARTICIPANTPK
         tableName: INVOICE_PARTICIPANT
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-22-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: INVOICE_PARTICIPANTPK
+        tableName: INVOICE_PARTICIPANT
+    dbms: h2
 - changeSet:
     id: 1496329844613-23
     author: ferrarimarco
@@ -1029,6 +1118,16 @@ databaseChangeLog:
         constraintName: MOVEMENTPK
         forIndexName: MOVEMENTPK
         tableName: MOVEMENT
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-23-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: MOVEMENTPK
+        tableName: MOVEMENT
+    dbms: h2
 - changeSet:
     id: 1496329844613-24
     author: ferrarimarco
@@ -1045,6 +1144,16 @@ databaseChangeLog:
         constraintName: PURCHASE_LINEPK
         forIndexName: PURCHASE_LINEPK
         tableName: PURCHASE_LINE
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-24-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: PURCHASE_LINEPK
+        tableName: PURCHASE_LINE
+    dbms: h2
 - changeSet:
     id: 1496329844613-25
     author: ferrarimarco
@@ -1063,6 +1172,16 @@ databaseChangeLog:
         constraintName: SYS_C00250402
         forIndexName: SYS_C00250402
         tableName: DOCUMENTO_CORR_PURCHASE_LINE
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-25-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: DOCUMENTO_CORRELATO_ID, PURCHASE_LINE_ID
+        constraintName: SYS_C00250402
+        tableName: DOCUMENTO_CORR_PURCHASE_LINE
+    dbms: h2
 - changeSet:
     id: 1496329844613-26
     author: ferrarimarco
@@ -1079,6 +1198,16 @@ databaseChangeLog:
         constraintName: SYS_C00250420
         forIndexName: SYS_C00250420
         tableName: BATCH_JOB_INSTANCE
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-26-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: JOB_INSTANCE_ID
+        constraintName: SYS_C00250420
+        tableName: BATCH_JOB_INSTANCE
+    dbms: h2
 - changeSet:
     id: 1496329844613-27
     author: ferrarimarco
@@ -1095,6 +1224,16 @@ databaseChangeLog:
         constraintName: SYS_C00250425
         forIndexName: SYS_C00250425
         tableName: BATCH_JOB_EXECUTION
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-27-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: JOB_EXECUTION_ID
+        constraintName: SYS_C00250425
+        tableName: BATCH_JOB_EXECUTION
+    dbms: h2    
 - changeSet:
     id: 1496329844613-28
     author: ferrarimarco
@@ -1111,6 +1250,16 @@ databaseChangeLog:
         constraintName: SYS_C00250437
         forIndexName: SYS_C00250437
         tableName: BATCH_STEP_EXECUTION
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-28-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: STEP_EXECUTION_ID
+        constraintName: SYS_C00250437
+        tableName: BATCH_STEP_EXECUTION
+    dbms: h2
 - changeSet:
     id: 1496329844613-29
     author: ferrarimarco
@@ -1127,6 +1276,16 @@ databaseChangeLog:
         constraintName: SYS_C00250441
         forIndexName: SYS_C00250441
         tableName: BATCH_STEP_EXECUTION_CONTEXT
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-29-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: STEP_EXECUTION_ID
+        constraintName: SYS_C00250441
+        tableName: BATCH_STEP_EXECUTION_CONTEXT
+    dbms: h2
 - changeSet:
     id: 1496329844613-30
     author: ferrarimarco
@@ -1143,6 +1302,16 @@ databaseChangeLog:
         constraintName: SYS_C00250445
         forIndexName: SYS_C00250445
         tableName: BATCH_JOB_EXECUTION_CONTEXT
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-30-h2
+    author: ferrarimarco
+    changes:
+    - addPrimaryKey:
+        columnNames: JOB_EXECUTION_ID
+        constraintName: SYS_C00250445
+        tableName: BATCH_JOB_EXECUTION_CONTEXT
+    dbms: h2
 - changeSet:
     id: 1496329844613-31
     author: ferrarimarco
@@ -1161,6 +1330,16 @@ databaseChangeLog:
         constraintName: JOB_INST_UN
         forIndexName: JOB_INST_UN
         tableName: BATCH_JOB_INSTANCE
+    dbms: oracle
+- changeSet:
+    id: 1496329844613-31-h2
+    author: ferrarimarco
+    changes:
+    - addUniqueConstraint:
+        columnNames: JOB_NAME, JOB_KEY
+        constraintName: JOB_INST_UN
+        tableName: BATCH_JOB_INSTANCE
+    dbms: h2
 - changeSet:
     id: 1496329844613-33
     author: ferrarimarco

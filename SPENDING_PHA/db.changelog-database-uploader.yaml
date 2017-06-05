@@ -9,8 +9,5 @@ databaseChangeLog:
         - runningAs:
             username: SPENDING_PHA
   - include:
-      file: db.changelog-database-uploader.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: db.changelog-1.0.0.yaml
+      file: db.changelog-database-uploader-1.0.0.yaml
       relativeToChangelogFile: true
