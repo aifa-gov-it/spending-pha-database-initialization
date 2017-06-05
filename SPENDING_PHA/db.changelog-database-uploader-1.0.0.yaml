@@ -1508,3 +1508,45 @@ databaseChangeLog:
         onUpdate: RESTRICT
         referencedColumnNames: STEP_EXECUTION_ID
         referencedTableName: BATCH_STEP_EXECUTION
+- changeSet:
+    id: 1496329844613-45
+    author: ferrarimarco
+    changes:
+    - renameTable:
+        newTableName: MEF_ALLEGATO_FATTURA
+        oldTableName: ATTACHMENT
+- changeSet:
+    id: 1496329844613-46
+    author: ferrarimarco
+    changes:
+    - renameTable:
+        newTableName: MEF_DATI_RIEPILOGO_FATTURA
+        oldTableName: DATI_RIEPILOGO
+- changeSet:
+    id: 1496329844613-47
+    author: ferrarimarco
+    changes:
+    - renameTable:
+        newTableName: MEF_DOCUMENTO_CORRELATO_FATTURA
+        oldTableName: DOCUMENTO_CORRELATO
+- changeSet:
+    id: 1496329844613-48
+    author: ferrarimarco
+    changes:
+    - renameTable:
+        newTableName: MEF_FATTURA
+        oldTableName: INVOICE
+- changeSet:
+    id: 1496329844613-49
+    author: ferrarimarco
+    changes:
+    - renameTable:
+        newTableName: MEF_SOGGETTO_PARTECIPANTE_FATTURA
+        oldTableName: INVOICE_PARTICIPANT
+- changeSet:
+    id: 1496329844613-50
+    author: ferrarimarco
+    changes:
+    - renameTable:
+        newTableName: MEF_LINEA_ACQUISTO_FATTURA
+        oldTableName: PURCHASE_LINE
