@@ -1,4 +1,4 @@
-# Invoices Processor
+# Spending PHA Database initialization scripts
 
 This is a set of scripts to setup Spending PHA database schemas. Any change not recorded here will not be considered as valid.
 
