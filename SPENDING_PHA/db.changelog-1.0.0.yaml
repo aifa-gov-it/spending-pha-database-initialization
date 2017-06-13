@@ -41,3 +41,13 @@ databaseChangeLog:
     - renameTable:
         newTableName: MEF_PCC_QV_FATT
         oldTableName: MEF_PCC_QW_FATT
+- changeSet:
+    id: 1496329844613-33
+    author: lellomelchionda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: ANNO
+        indexName: MEF_PCC_A_IDX
+        tableName: MEF_PCC_QV_FATT
