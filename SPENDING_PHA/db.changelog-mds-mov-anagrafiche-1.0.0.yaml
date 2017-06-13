@@ -903,3 +903,34 @@ databaseChangeLog:
             name: DESCRIZIONE
             value: ESERCIZIO COMMERCIALE
         tableName: MDS_TIPOLOGICA_ANAG
+- changeSet:
+    id: 1496659488940-38
+    author: lellomelchionda
+    changes:
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: F
+        - column:
+            name: DESCRIZIONE
+            value: FARMACIA SUCCURSALE
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: F
+        - column:
+            name: DESCRIZIONE
+            value: FARMACIA DISPENSARIO
+        tableName: MDS_TIPOLOGICA_ANAG
+    - insert:
+        columns:
+        - column:
+            name: CODICE
+            value: F
+        - column:
+            name: DESCRIZIONE
+            value: FARMACIA STAGIONALE
+        tableName: MDS_TIPOLOGICA_ANAG
