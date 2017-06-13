@@ -694,3 +694,17 @@ databaseChangeLog:
         splitStatements: true
         sql: CREATE OR REPLACE TRIGGER INS_MDS_A_PAESE_ESTERO BEFORE INSERT ON MDS_A_PAESE_ESTERO REFERENCING OLD AS OLD NEW AS NEW FOR EACH ROW BEGIN IF :NEW.ID IS NULL THEN SELECT SEQ_MDS_A_PAESE_ESTERO.NEXTVAL INTO :NEW.ID FROM DUAL; END IF; END;
         stripComments: true
+- changeSet:
+    id: 1497357468809-51
+    author: ferrarimarco
+    changes:
+    - setTableRemarks:
+        remarks: Tabella contenente tutte le anagrafiche del MdS: Strutture pubbliche, private e istituiti penitenziari (Tipo anagrafica: T), ASL (Tipo anagrafica: A), Produttori, Distributori, Grossisti (Tipo anagrafica: P,D), Farmacie (Tipo anagrafica: F)
+        tableName: MDS_ANAG
+- changeSet:
+    id: 1497357468809-52
+    author: ferrarimarco
+    changes:
+    - setTableRemarks:
+        remarks: Tabella MEF PCC (Piattaforma di Certificazione Crediti) contenente le fatture aggregate per regione, scaricate tramite QlickView (la tabella contiene le fatture emesse da tutti i tipi di aziende, non solo quelle farmaceutiche)
+        tableName: MEF_PCC_QV_FATT
