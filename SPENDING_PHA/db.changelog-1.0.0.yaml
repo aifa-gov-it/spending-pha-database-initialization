@@ -7,22 +7,22 @@ databaseChangeLog:
         columns:
         - column:
             name: REGIONE
-            type: VARCHAR2(30 BYTE)
+            type: VARCHAR2(50 BYTE)
         - column:
             name: STRUTTURA
-            type: VARCHAR2(255 BYTE)
+            type: VARCHAR2(512 BYTE)
         - column:
             name: CREDITORE
-            type: VARCHAR2(255 BYTE)
+            type: VARCHAR2(512 BYTE)
         - column:
             name: CF_CREDITORE
-            type: VARCHAR2(30 BYTE)
+            type: VARCHAR2(50 BYTE)
         - column:
             name: TOT_FATTURE
-            type: NUMBER(12, 2)
+            type: NUMBER
         - column:
             name: ANNO
-            type: NUMBER(4, 0)
+            type: NUMBER(4)
         tableName: MEF_PCC_QW_FATT
 - changeSet:
     id: 1496329844613-32
