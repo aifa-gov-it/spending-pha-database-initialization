@@ -51,7 +51,6 @@ databaseChangeLog:
             name: ANNO
         indexName: MEF_PCC_A_IDX
         tableName: MEF_PCC_QV_FATT
-databaseChangeLog:
 - changeSet:
     id: 1497352976243-1
     author: lellomelchionda
