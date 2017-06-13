@@ -6,8 +6,11 @@ databaseChangeLog:
       - and:
         - dbms:
             type: oracle
-        - runningAs:
-            username: SPENDING_PHA
+        - or:
+          - runningAs:
+              username: SPENDING_PHA
+          - runningAs:
+              username: SPENDING_PHA_UP
   - include:
       file: db.changelog-database-uploader.yaml
       relativeToChangelogFile: true
