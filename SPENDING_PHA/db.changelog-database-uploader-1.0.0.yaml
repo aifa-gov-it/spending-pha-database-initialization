@@ -1564,3 +1564,22 @@ databaseChangeLog:
     - renameTable:
         newTableName: MDS_MOV
         oldTableName: MOVEMENT
+- changeSet:
+    id: 1496329844613-53
+    author: ferrarimarco
+    changes:
+    - dropColumn:
+        columnName: FINANCIAL_INSTITUTION_ABI
+        tableName: INVOICE
+    - dropColumn:
+        columnName: FINANCIAL_INSTITUTION_BIC
+        tableName: INVOICE
+    - dropColumn:
+        columnName: FINANCIAL_INSTITUTION_CAB
+        tableName: INVOICE
+    - dropColumn:
+        columnName: FINANCIAL_INSTITUTION_IBAN
+        tableName: INVOICE
+    - dropColumn:
+        columnName: FINANCIAL_INSTITUTION_NAME
+        tableName: INVOICE
