@@ -2,19 +2,13 @@
 
 This is a set of scripts to setup Spending PHA database schemas. Any change not recorded here will not be considered as valid.
 
-Every database change is tracked in a [Liquibase](http://www.liquibase.org) changelog.
+## Run a Dockerized Oracle Database Instance
 
-## Dependencies
+### Dependencies
 
 - Docker 1.12+
 
-## How to run
-
-### Liquibase
-
-Just install use the Dockerized liquibase installation: https://hub.docker.com/r/ferrarimarco/liquibase/
-
-### Run a Dockerized Oracle Database Instance
+### How to run
 
 1. Login to the Oracle Container Registry:
 
