@@ -20,17 +20,17 @@ This is a set of scripts to setup Spending PHA database schemas. Any change not 
 
   ```
   $ docker run -d --env-file <path_to_env_file> -p <listener_port>:1521 -p <http_port>:5500 -it --name <container_name> --shm-size="<shared_memory_size>" <image_name>
-
-  Parameters:
-     <path_to_env_file> is the path to the environment file you created using above example.
-     <listener_port> is the port on host machine to map the container's 1521 port (listener port).
-     <http_port> is the port on host machine to map the container's 5500 port (http service port).
-     <container_name> is the container name you want to create.
-     <shared_memory_size> is the memory size for the container to run. The minimum requirement is 4GB (--shm-size="4g").
-     <image_name> is the image that you use to create a container.
   ```
 
-  Where env-file is a file with the following contents (example):
+  Parameters:
+     `<path_to_env_file>` is the path to the environment file you created using above example.
+     `<listener_port>` is the port on host machine to map the container's `1521` port (listener port).
+     `<http_port>` is the port on host machine to map the container's `5500` port (http service port).
+     `<container_name>` is the container name you want to create.
+     `<shared_memory_size>` is the memory size for the container to run. The minimum requirement is 4GB (`--shm-size="4g"`).
+     `<image_name>` is the image that you use to create a container.
+
+  Where `env-file` is a file with the following contents (example):
 
   ```
   ####################################################################
@@ -80,9 +80,11 @@ This is a set of scripts to setup Spending PHA database schemas. Any change not 
 
   ```
   $ docker exec -it <container_name> /bin/bash
-  Where <container_name> is the container name you want to get into. Once you are in, you are running as root user. Use “su - oracle” to run as oracle user. To exit of container, use “exit” just like a regular ssh connection.
   ```
 
-  The first database setup takes about 5 to 8 minutes. Logs are kept under /home/oracle/setup/log. To check whether the database setup is successful, check the log file “/home/oracle/setup/log/setupDB.log“. If “Done ! The database is ready for use .” is shown, the database setup was successful.
+  Where `<container_name>` is the container name you want to get into. Once you are in, you are running as root user. Use `su - oracle` to run as oracle user. To exit of container, use “exit” just like a regular ssh connection.
 
-  The restart of container takes less than 1 minute just to start the database and its listener. The startup log is “/home/oracle/setup/log/startupDB.log”
+
+  The first database setup takes about 5 to 8 minutes. Logs are kept under `/home/oracle/setup/log`. To check whether the database setup is successful, check the log file `/home/oracle/setup/log/setupDB.log`. If `Done ! The database is ready for use .` is shown, the database setup was successful.
+
+  The restart of container takes less than 1 minute just to start the database and its listener. The startup log is `/home/oracle/setup/log/startupDB.log`
